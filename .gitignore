@@ -51,3 +51,5 @@ rsconnect/
 # .DS_Store
 .DS_Store
 data/network.gml.zst
+data/network.gml
+data/network.rds
