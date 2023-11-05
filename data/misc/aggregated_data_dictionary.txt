@@ -1,0 +1,25 @@
+Aggregated country-year data dictionary
+
+Each row in the file aggregated_country_year.csv represents a country-year
+
+country
+year
+ncontracts: the number of contracts awarded by issuers from that country/year
+sb_rate: the annual single-bidding rate
+nwinners: the number of unique winners (by deduplicated ID)
+nissuers: the number of unique issuers (by deduplicated ID)
+nedges: the number of edges/contracting relationships between winners and issuers
+non_core_sb_rate: the single bidding rate outside of the core
+core_ncontracts: the number of contracts between core nodes
+core_sb_rate: the single bidding rate among core contracts
+core_nwinners: the number of core winners
+core_nissuers: the number of core issuers
+core_nedges: the number of edges in the core
+core_contract_share: share of all contracts in the core
+eqi_score: QoG Institute's European Quality of Government Index
+ti_cpi: Transparency International's Corruption Perceptions Index
+wbgi_cce: World Bank's Control of Corruption Score
+vdem_corr: VDEM's Political corruption score
+sb_rate_08_16: average single bidding rate 2008-2016
+sb_clustering_vs_random: The tendency of single bidding to cluster within linked communities vs a sector-preserving null model.
+sb_core_vs_random: The tendency of single bidding to be in the core vs a sector-preserving null model.

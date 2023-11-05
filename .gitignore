@@ -53,3 +53,5 @@ rsconnect/
 data/network.gml.zst
 data/network.gml
 data/network.rds
+data/misc/contracts.csv
+data/misc/aggregated_country_year.csv
