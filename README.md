@@ -2,7 +2,7 @@
 This project analyzes EU procurement contract network data for the Applied Network Analysis course (GRAD-E1426) taught by [Phillip Lorenz-Spreen](https://www.mpib-berlin.mpg.de/staff/philipp-lorenz-spreen) at the [Hertie School](https://www.hertie-school.org/en/) in Berlin.
 
 ## Data
-[`eu_procurements`](https://networks.skewed.de/net/eu_procurements): A bipartite network of public EU procurement contracts, from 2008 to 2016, between issuing buyers (public institutions such as a ministry or city hall) and supplying winners (a private firm). Contracts are aggregated into annual snapshots, edges are annotated with contract value information. Nodes are annotated with location information, including country of origin. The network contains 839,824 nodes and 4,098,711 links.
+[`eu_procurements`](https://networks.skewed.de/net/eu_procurements): A bipartite network of public EU procurement contracts, from 2008 to 2016, between issuing buyers (public institutions such as a ministry or city hall) and supplying winners (a private firm). Contracts are aggregated into annual snapshots, links are annotated with contract value information. Nodes are annotated with location information, including country of origin. The network contains 839,824 nodes and 4,098,711 links.
 
 ### Node properties
 * `address`: the raw address of the entity          
@@ -30,10 +30,19 @@ This project analyzes EU procurement contract network data for the Applied Netwo
 * `processed_nuts`: an imperfectly cleaned NUTS code  
 * `single_bidder`: 1 if there was no competition for the contract (note: mean imputed at the country-level) 
 * `tender_id`: an identifier for each contracts               
-* `year`: the year of the contract                                     
+* `year`: the year of the contract
+
+[`eu_procurements_alt`](https://networks.skewed.de/net/eu_procurements_alt): A collection of 234 networks representing the annual national public procurement markets of 26 European countries from 2008-2016. Data is sourced from Tenders Electronic Daily (TED), the official procurement portal of the European Union. Nodes with the suffix "_i" are issuers (sometimes referred to as buyers) of public contracts, for instance public hospitals, ministries, local governments. Nodes with the suffix "_w" are winners (sometimes called suppliers) of public contracts, generally private-sector firms. Identities have been statistically de-duplicated, as described in the paper by [Wachs, Fazekas, & Kertész](https://link.springer.com/article/10.1007/s41060-019-00204-1). Each network is bipartite: links represent contracting relationships between issuers and winners. Ids of issuers and winners are consistent across time and within countries. Node ids have been randomly generated and do not correspond to any official statistics.
+
+### Link properties
+* `count`: measures the volume of contracts between the issuer and winner in the given year. This attribute can be interpreted as a weight or strength of the relationship.
+* `pctSingleBid`: describes the share of contracts between the issuer and winner awarded without competition, i.e. with the winner as single bidder or sole-supplier.
+
+Note: missing data on single-bidding is imputed. This is an elementary indicator of corruption risk of the contract. For more information consult [the paper referenced above](https://link.springer.com/article/10.1007/s41060-019-00204-1).
+                            
 
 ## Method
-* Throughout the project workflow, [Google Colab](https://colab.research.google.com/) is used to write and execute Python code. To enable use of the `graph-tool` package in the Colab environment, code provided [Tiago Peixoto (@count0)](https://github.com/count0/colab-gt/blob/master/colab-gt.ipynb) is used.
+* Throughout the project workflow, [Google Colab](https://colab.research.google.com/) is used to write and execute Python code. To enable use of the `graph-tool` package in the Colab environment, code provided [Tiago P. Peixoto (@count0)](https://github.com/count0/colab-gt/blob/master/colab-gt.ipynb) is used.
 * The `eu_procurements` dataset was imported directly from the `graph-tools` package.
 
 ## Sources
