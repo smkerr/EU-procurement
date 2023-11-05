@@ -13,7 +13,7 @@ This project analyzes EU procurement contract network data for the Applied Netwo
 * `postcode`: the raw postcode of the entity       
 * `sector`: the sector of the *issuer*         
 * `town`: the raw town of the entity           
-* `type`: the type of the *issuer* 
+* `type`: the type of the *issuer*
 
 ### Link properties
 * `contract_cpv`: the raw CPV code of the contract  
@@ -32,13 +32,14 @@ This project analyzes EU procurement contract network data for the Applied Netwo
 * `tender_id`: an identifier for each contracts               
 * `year`: the year of the contract
 
-[`eu_procurements_alt`](https://networks.skewed.de/net/eu_procurements_alt): A collection of 234 networks representing the annual national public procurement markets of 26 European countries from 2008-2016. Data is sourced from Tenders Electronic Daily (TED), the official procurement portal of the European Union. Nodes with the suffix "_i" are issuers (sometimes referred to as buyers) of public contracts, for instance public hospitals, ministries, local governments. Nodes with the suffix "_w" are winners (sometimes called suppliers) of public contracts, generally private-sector firms. Identities have been statistically de-duplicated, as described in the paper by [Wachs, Fazekas, & Kertész](https://link.springer.com/article/10.1007/s41060-019-00204-1). Each network is bipartite: links represent contracting relationships between issuers and winners. Ids of issuers and winners are consistent across time and within countries. Node ids have been randomly generated and do not correspond to any official statistics.
+[`eu_procurements_alt`](https://networks.skewed.de/net/eu_procurements_alt): A collection of 234 networks representing the annual national public procurement markets of 26 European countries from 2008-2016. Data is sourced from Tenders Electronic Daily (TED), the official procurement portal of the European Union. Nodes with the suffix "_i" are issuers (sometimes referred to as buyers) of public contracts, for instance public hospitals, ministries, local governments. Nodes with the suffix "_w" are winners (sometimes called suppliers) of public contracts, generally private-sector firms. Each network is bipartite: links represent contracting relationships between issuers and winners. 
+
+### Node properties
+* `label`: IDs of issuers and winners are consistent across time and within countries. Node IDs have been randomly generated and do not correspond to any official statistics. Identities have been statistically de-duplicated, as described in the paper by [Wachs, Fazekas, & Kertész](https://link.springer.com/article/10.1007/s41060-019-00204-1).
 
 ### Link properties
-* `count`: measures the volume of contracts between the issuer and winner in the given year. This attribute can be interpreted as a weight or strength of the relationship.
-* `pctSingleBid`: describes the share of contracts between the issuer and winner awarded without competition, i.e. with the winner as single bidder or sole-supplier.
-
-Note: missing data on single-bidding is imputed. This is an elementary indicator of corruption risk of the contract. For more information consult [the paper referenced above](https://link.springer.com/article/10.1007/s41060-019-00204-1).
+* `count`: Measures the volume of contracts between the issuer and winner in the given year. This attribute can be interpreted as a weight or strength of the relationship.
+* `pctSingleBid`: Describes the share of contracts between the issuer and winner awarded without competition, i.e. with the winner as single bidder or sole-supplier. Note: missing data on single-bidding is imputed. This is an elementary indicator of corruption risk of the contract. For more information consult [the paper referenced above](https://link.springer.com/article/10.1007/s41060-019-00204-1).
                             
 
 ## Method
