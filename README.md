@@ -17,7 +17,10 @@ This project analyzes EU procurement contract network data for the Applied Netwo
 ## Method
 * Throughout the project workflow, [Google Colab](https://colab.research.google.com/) was used to write and execute Python code. Code provided by [Tiago P. Peixoto (@count0)](https://github.com/count0/colab-gt/blob/master/colab-gt.ipynb) enabled the use of the `graph-tool` package within the Google Colab environment.
 * The `eu_procurements` dataset was imported directly from the `graph-tools` package.
-
+* Several network properties are examined including degree distribution and the distribution of links with higher than average percentage of single bid contracts (an indicator of potential corruption).
+* Since the network is partitioned into two sets (e.g., issuers and winners) and links exclusively connect the nodes of one set to the nodes of the other, the network is considered bipartite. To perform a thorough analysis, the network is converted into two separate network projections, one for issuers and one for winners, using the `NetworkX` package.
+* Several network analysis techniques such as centrality measures, density measures, and community detection are applied to the bipartite network projections to better understand their structure.
+  
 ## Sources
 * [`eu_procurements_alt`](https://networks.skewed.de/net/eu_procurements_alt) EU national procurement networks (2008-2016) dataset
 * J. Wachs, M. Fazekas, and J. Kertész; "Corruption Risk in Contracting Markets: A Network Science Perspective." International Journal of Data Science and Analytics, pp 1–16 (2020), https://doi.org/10.1007/s41060-019-00204-1.
