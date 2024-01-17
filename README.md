@@ -1,4 +1,4 @@
-# EU Procurement
+# EU Public Procurement Network
 This project analyzes EU procurement contract network data for the Applied Network Analysis course (GRAD-E1426) taught by [Phillip Lorenz-Spreen](https://www.mpib-berlin.mpg.de/staff/philipp-lorenz-spreen) at the [Hertie School](https://www.hertie-school.org/en/) in Berlin. I collaborated with fellow Hertie students [Kai Foerster](https://github.com/kaifoerster), [Danial Riaz](https://github.com/danialriaz/), and [Lukas Lehmann](https://github.com/lukaslehmann-R) to perform the analysis and present our findings.
 
 ![Slovakia's public procurement network, 2014](https://raw.githubusercontent.com/smkerr/EU_procurement/main/img/default_layout/SK_2014.png)
